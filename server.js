@@ -19,26 +19,12 @@ app.use(express.static(`${__dirname}/public`));
 app.use(methodOverride('_method'));
 //lets us retrieve data from the form
 app.use(bodyParser.urlencoded({extended:false}));
-//lets save current user information. used with auth
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,  //resave every request
-  saveUninitialized: false, // track unauthenticated users
-  cookie: {macAge: 1000*60*60*24*7*2}  //expires in 2 weeks
-}));
-//Used with auth. redirects user to login if they are not signed in
-app.use(function(req, res, next) {
-  if (req.path !== "/login" && req.path !== "/register" && req.session.currentUser == null){
-      res.redirect('/login');
-  }   else{
-      next();
-  }
-});
 
 //routes
-app.get('/', (req, res) => { res.redirect("/login"); });
-app.use('/users', userCtrl);  //users route
-app.use('/meetup', meetupCtrl);
+app.get('/', (req, res) => { res.render("landing-page"); });
+app.get('/dashboard', (req, res) => { res.render("dashboard"); });
+// app.use('/users', userCtrl);  //users route
+// app.use('/meetup', meetupCtrl);
 
 
 app.get('*', (req, res) => {
