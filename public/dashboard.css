@@ -1,7 +1,3 @@
-* {
-
-}
-
 body {
   width: 100%;
   font-family: Helvetica;
@@ -10,7 +6,8 @@ body {
 
 .logo {
   float: left;
-}
+  padding-left: 15px;
+}  
 
 .logo ul {
   padding: 0;
@@ -35,6 +32,7 @@ body {
   padding: 0;
   background-color: white;
   margin-left: 10px;
+  padding-top: 12px;
 }
 
 .dashboard input {
@@ -43,8 +41,6 @@ body {
   top: 25px;
   background-color: white;
 }
-<<<<<<< HEAD
-=======
 
 .create {
   position: relative;
@@ -56,6 +52,16 @@ body {
   margin-bottom: 20px;
 }
 
+.create h2 {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+button {
+  padding-bottom: 10px;
+}
+
+
 .upcoming {
   position: relative;
   width: 670px;
@@ -65,8 +71,11 @@ body {
   overflow-x: auto;
 }
 
+.upcoming h1 {
+  margin-left: 10px;
+}
+
 img {
   width: 50px;
   height: 50px;
 }
->>>>>>> submaster
