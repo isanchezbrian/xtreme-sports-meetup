@@ -17,12 +17,13 @@ body {
 }
 
 .container {
-    max-width: 980px;
+    max-width: 800px;
     padding: 2% 3%;
     margin: 0 auto;
     font-size: 1.3em;
     line-height: 1.6;
 }
+
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.6;
 }
@@ -37,22 +38,12 @@ h2 {
     text-align: center;
 }
 
-/* HEADER */
-/* header {
-
-} */
-
-/* NAV BAR */
-.nav-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
+h3 {
+    font-size: 1.6em;
 }
 
-.nav-item {
-    font-size: 1.3em;
-    padding: 20px;
+h4 {
+    font-size: 1.2em;
 }
 
 /* HERO */
@@ -65,16 +56,28 @@ h2 {
     background-size: cover;
 }
 
+.logo img{
+    max-width: 650px;
+    position: absolute;
+    padding: 0;
+    top: 3%;
+    left: 2%;
+    width: 200px;
+    height: 70px;
+}
+
 .title {
     max-width: 650px;
     padding: 5%;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 8%;
     color: white;
 }
 
-.ourStoryBtn {
+.joinBtn {
+    position: absolute;
+    top: 85%;
     color: white;
     background-color: red;
     border: hidden;
@@ -86,21 +89,59 @@ h2 {
     box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.4)
 }
 
+.joinBtn:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+.container {
+    width: 80%;
+}
+
+.explore-container {
+    display: flex;
+    justify-content: center;
+}
+
+.explore-header {
+    display: inline;
+    padding-right: 20px;
+}
+
+/* BUTTONS */
+.cdlBtn {
+    /* display: inline-block; */
+    /* position: absolute; */
+    float: right;
+}
+
+button {
+    background-color: #EFEFEF;
+    width: 220px;
+    height: 45px;
+    padding: 2%;
+    border: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+    font-size: 0.7em;
+    outline: none;
+}
+
+button:focus{
+    background-color: red;
+    color: white;
+    box-shadow: inset 3px 3px 3px 3px rgba(0, 0, 0, 0.1);;
+}
+
 /* SNOW GALLERY */
 .snow-gallery {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.snow-gallery img {
-    max-width: 250px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    width: 200px;
-    height: 200px;
-    
 }
 
 /* SKY GALLERY */
@@ -111,48 +152,53 @@ h2 {
     flex-wrap: wrap; 
 }
 
-.sky-gallery img {
-    max-width: 250px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    width: 200px;
-    height: 200px;
-}
-
+/* EVENT CARDS */
 
 .event-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap; 
-    width: 80%;
+    justify-content: space-between;
+    /* width: 80%; */
+    max-width: 980px;
+    padding: 0 2%;
+    margin: 0 auto;
+    font-size: 0.9em;
+    line-height: 1.6;
 }
-
 
 .event-card {
     position: relative;
-    border: 1px solid black;
+    border: 1px solid beige;
     border-radius: 10px;
     margin: 20px;
     height: 260px;
     width: 202px;
+    overflow: none;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1)
 }
+
 .event-header img {
     max-width: 250px;
     width: 200px;
     height: 200px;
     border-radius: 10px 10px 0 0;
+    transition: height 3s
 }
+
+.event-header:hover img {
+    height: 250px;
+}
+
 .title-mask {
     position: absolute;
     left: 0;
     top:0;
     width: 200px;
-    height: 200px;
+    height: 100px;
     border-radius: 10px 10px 0 0;
-    background: rgba(0, 0, 0, .3);  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .2), rgba(0,0,0,0));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom        , rgba(0, 0, 0, .2), rgba(0,0,0,0)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: rgba(0, 0, 0, .6);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(0,0,0,0));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom        , rgba(0, 0, 0, .6), rgba(0,0,0,0)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .event-title {
@@ -163,9 +209,6 @@ h2 {
 .event-info {
     padding-left: 5px;
 }
-
-
-
 
 /* FOOTER */
 footer {
