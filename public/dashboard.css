@@ -1,0 +1,12 @@
+.logo {
+  float: left;
+}
+
+.logo ul {
+  padding: 0;
+}
+
+.dashboard {
+  float: left;
+  margin-left: 35px;
+}
