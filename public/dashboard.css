@@ -1,10 +1,11 @@
 * {
-  font-family: Helvetica;
-  background-color: #C7C7C7;
+
 }
 
 body {
   width: 100%;
+  font-family: Helvetica;
+  background-color: #C7C7C7;
 }
 
 .logo {
@@ -27,6 +28,7 @@ body {
   overflow: hidden;
   background-color: white;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .dashboard h1 {
@@ -42,6 +44,26 @@ body {
   background-color: white;
 }
 
-.create h2 {
+.create {
+  position: relative;
+  width: 670px;
+  height: 900px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
 
+.upcoming {
+  position: relative;
+  width: 670px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+img {
+  width: 50px;
+  height: 50px;
 }
