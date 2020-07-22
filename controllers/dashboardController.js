@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Event.find({}, (err, allMeetups) => {
       if (err) return console.log(err);
-          res.send(allMeetups);   
+          res.render("dashboard", {meetups: allMeetups});   
     });
 });
 
