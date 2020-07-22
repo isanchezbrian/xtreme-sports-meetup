@@ -1,14 +1,13 @@
 <div class="event-card">
     <div class="event-header">
-        <img src="/images/sky-image1.jpg" alt="">
+        <img src="<%= meetup.image_url %>" alt="sports image">
         <div class="title-mask">
             <h5 class="event-title"><%= meetup.name %></h5>
         </div>
     </div>
     <div class="event-info">
         <span class="date"><%= meetup.date %></span>
-        <span class="begin_time"><%= meetup.begin_time %> - </span>
-        <span class="end_time"><%= meetup.end_time %></span><br>
+        <span class="begin_time"><%= meetup.begin_time %></span><br>
         <span class="difficulty"><%= meetup.difficulty %></span>
     </div>
 </div>
