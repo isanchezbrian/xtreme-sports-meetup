@@ -1,1 +1,54 @@
-<%- include('shared/header') %>
+<head>
+    <script defer src="/app.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+
+<form action="/dashboard" method="POST">
+    <div class="form-group">
+      <label for="name">Event Name</label>
+      <input class="form-control" type="text" id="name" name="name" required/>
+    </div>
+    <div class="form-group">
+      <label for="date">Date of Event</label>
+      <input class="form-control" type="text" id="date" name="date" required/>
+    </div>
+    <div class="form-group">
+      <label for="begin_time">Start Time</label>
+      <input class="form-control" type="text" id="begin_time" name="begin_time" required/>
+    </div>
+    <div class="form-group">
+      <label for="end_time">End Time</label>
+      <input class="form-control" type="text" id="end_time" name="end_time" required/>
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input class="form-control" type="text" id="category" name="category" required/>
+    </div>
+    <div class="form-group">
+      <label for="difficulty">Difficulty Level</label>
+      <input class="form-control" type="text" id="difficulty" name="difficulty" required/>
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input class="form-control" type="text" id="location" name="location" required/>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" type="text" id="description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="image_url">Add Image</label>
+      <textarea class="form-control" type="text" id="image_url" name="image_url" required></textarea>
+    </div>
+    <button class="btn btn-primary submit-btn" type="submit">Add Task</button>
+  </form>
+
+
+<section id="sky-sports" class="event-container">
+  <% meetups.forEach(meetup => { %>
+      <% if(meetup.category) { %>
+          <%- include("event-card", {meetup}); %>
+      <% }; %>
+  <% }); %>
+</section>
