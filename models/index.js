@@ -1,19 +1,17 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/extremesports';
 
-mongoose.connect(connectionString,{
+const MONGODB_MJ = ('mongodb://localhost:27017/extreme-sports-meetup');
+
+mongoose.connect(process.env.MONGODB_MJ || MONGODB_MJ, {
   useNewUrlParser: true,
-  useCreateIndex:true,
-  useUnifiedTopology:true,
-  useFindAndModify:false,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
 })
+  .then( () => console.log('succesful connection') )
+  .catch( (err) => console.log(`connection failed: ${err}`) )
 
-  .then(()=> console.log('MongoDB connected succesfully'))
-  .catch((err)=> console.log(`MongoDB connection error:${err}`));
-
-module.exports={
-  // User: require('./users'),
-  Meetup: require('./meetup'),
+module.exports = {
+  Event: require('./event'),
 };
-

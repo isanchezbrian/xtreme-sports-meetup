@@ -65,3 +65,9 @@
 
 </body>
 </html>
+<h1>landing page</h1>
+<% meetups.forEach(meetup => { %>
+    <h1>Name: <%= meetup.name                %></h1><br>
+    <h2>Difficulty: <%= meetup.difficulty    %></h2><br>
+    <h3>Organizer: <%= meetup.date %></h3><br><br><br>
+<% }); %>
