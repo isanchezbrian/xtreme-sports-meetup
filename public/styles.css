@@ -18,7 +18,7 @@ body {
 
 .container {
     max-width: 980px;
-    padding: 3% 5%;
+    padding: 2% 3%;
     margin: 0 auto;
     font-size: 1.3em;
     line-height: 1.6;
@@ -69,7 +69,7 @@ h2 {
     max-width: 650px;
     padding: 5%;
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 8%;
     color: white;
 }
@@ -78,16 +78,50 @@ h2 {
     color: white;
     background-color: red;
     border: hidden;
-    font-size: 0.6em;
+    border-radius: 4px;
+    font-size: 0.7em;
     cursor: pointer;
-    width: 90px;
+    width: 100px;
     height: 35px;
-    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.4)
+    box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.4)
+}
+
+/* SNOW GALLERY */
+.snow-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.snow-gallery img {
+    max-width: 250px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 200px;
+    height: 200px;
+    
+}
+
+/* SKY GALLERY */
+.sky-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.sky-gallery img {
+    max-width: 250px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 200px;
+    height: 200px;
 }
 
 /* FOOTER */
 footer {
-    width: 100vh;
+    width: 100vw;
     text-align: center;
     font-size: 1.2em;
     padding: 2% 5%;
