@@ -6,8 +6,9 @@ const app = express();
 const PORT = process.env.PORT || 4001;
 
 // controllers
-const userCtrl = require('./controllers/userController');
-const meetupCtrl = require('./controllers/meetupController');
+const landingPageCtrl = require('./controllers/landingPageController');
+const dashboardCtrl = require('./controllers/dashboardController');
+const apiCtrl = require('./controllers/apiController');
 
 //view
 app.set('view engine', 'ejs');
@@ -21,10 +22,9 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 
 //routes
-app.get('/', (req, res) => { res.render("landing-page"); });
-app.get('/dashboard', (req, res) => { res.render("dashboard"); });
-// app.use('/users', userCtrl);  //users route
-// app.use('/meetup', meetupCtrl);
+app.use('/', landingPageCtrl);
+app.use('/dashboard', dashboardCtrl);
+app.use('/api/v1', apiCtrl);
 
 
 app.get('*', (req, res) => {

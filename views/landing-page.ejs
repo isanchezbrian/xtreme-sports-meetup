@@ -1,1 +1,72 @@
-<h1>landing page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Extreme Sports Meetup</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <%- include('shared/header') %>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="title">
+                <h1>BECOME YOUR BEST SELF</h1>
+                <input type="submit" name="our-story" id="our-story" class="ourStoryBtn" value="JOIN US">
+            </div>
+        </section>
+
+        <!-- EXPLORE MEETUPS -->
+        <section id="explore" class="container">
+            <h2>Explore Meetups</h2>
+        </section>
+
+        <section id="" class="container">
+            <h3>Explore By</h3>
+            <input type="submit" name="" id="" class="" value="Category">
+            <input type="submit" name="" id="" class="" value="Difficulty">
+            <input type="submit" name="" id="" class="" value="Location">
+        </section>
+
+        <section id="snow-sports" class="container">
+            <h4>Snow Sports</h4>
+            <div class="snow-gallery">
+                <img src="/images/ski-image1.jpg" alt="Snow boarding">
+                <img src="/images/ski-image2.png" alt="Young child skiing">
+                <img src="/images/ski-image3.jpg" alt="Snow boarding on ramps">
+                <img src="/images/ski-image4.jpg" alt="Ski uphill">
+            </div>   
+        </section>
+            
+        <section id="sky-sports" class="container">
+            <h4>Sky Sports</h4>
+            <div class="sky-gallery">
+                <img src="/images/sky-image1.jpg" alt="Parasailing">
+                <img src="/images/sky-image2.jpg" alt="Sky Diving">
+                <img src="/images/sky-image3.jpg" alt="Couple Base Jumping">
+                <img src="/images/sky-image4.jpg" alt="Bungie Jumping">
+            </div>
+        </section>
+
+
+        <section id="sky-sports" class="event-container">
+            <% meetups.forEach(meetup => { %>
+                <% if(meetup.category) { %>
+                    <%- include("event-card", {meetup}); %>
+                <% }; %>
+            <% }); %>
+        </section>
+
+
+        <footer>
+            <p>&copy; 2020 Xtreme Sports Meetup</p>
+        </footer>
+
+    </main>
+
+
+</body>
+</html>

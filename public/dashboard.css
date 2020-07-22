@@ -1,0 +1,69 @@
+* {
+
+}
+
+body {
+  width: 100%;
+  font-family: Helvetica;
+  background-color: #C7C7C7;
+}
+
+.logo {
+  float: left;
+}
+
+.logo ul {
+  padding: 0;
+}
+
+.primary {
+  float: left;
+  margin-left: 35px;
+}
+
+.dashboard {
+  position: relative;
+  width: 670px;
+  height: 85px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard h1 {
+  padding: 0;
+  background-color: white;
+  margin-left: 10px;
+}
+
+.dashboard input {
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  background-color: white;
+}
+
+.create {
+  position: relative;
+  width: 670px;
+  height: 900px;
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.upcoming {
+  position: relative;
+  width: 670px;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
