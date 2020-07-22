@@ -6,27 +6,12 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Event.find({}, (err, allMeetups) => {
       if (err) return console.log(err);
-          res.send(allMeetups);   
+          res.render("dashboard", {meetups: allMeetups});   
     });
 });
 
 router.post('/', (req, res) => {
-    newMeetup = {
-        name: "Patrick's Snow Boarding",
-        organizer: {
-            name: "Patrick",
-            email: "Patrick@email.com",
-            description: "Hi I'm Patrick."
-        },
-        difficulty: "Medium",
-        duration: "3 hrs per meet",
-        location: "San Francisco",
-        description: "This is it. Come be awesome",
-        next_meet: "Tomorrow",
-        members: 2,
-        pic_url:"Test"
-    }
-    db.Event.create(newMeetup, (err, createdMeetup) => {
+    db.Event.create(req.body, (err, createdMeetup) => {
         if (err) return console.log(err);
         console.log(createdMeetup);
         res.redirect("/dashboard");
