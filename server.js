@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 4001;
 // controllers
 const landingPageCtrl = require('./controllers/landingPageController');
 const dashboardCtrl = require('./controllers/dashboardController');
+const apiCtrl = require('./controllers/apiController');
 
 //view
 app.set('view engine', 'ejs');
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 //routes
 app.use('/', landingPageCtrl);
 app.use('/dashboard', dashboardCtrl);
+app.use('/api/v1', apiCtrl);
 
 
 app.get('*', (req, res) => {
