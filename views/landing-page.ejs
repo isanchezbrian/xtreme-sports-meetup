@@ -27,7 +27,7 @@
             <h2>Explore Meetups</h2>
         </section>
 
-        <section id="" class="container">
+        <section id="" class="explore-container">
             <h3 class="explore-header">Explore By</h3>
             <div class="cdlBtn">
             <button>Category</button>
@@ -43,7 +43,7 @@
         <section id="snow-sports" class="event-container">
             <div class="snow-gallery">
                 <% meetups.forEach(meetup => { %>
-                    <% if(meetup.category) { %>
+                    <% if(meetup.category === "Snow Sports") { %>
                         <%- include("event-card", {meetup}); %>
                     <% }; %>
                 <% }); %>
@@ -57,7 +57,7 @@
         <section id="sky-sports" class="event-container">
             <div class="sky-gallery">
                 <% meetups.forEach(meetup => { %>
-                    <% if(meetup.category) { %>
+                    <% if(meetup.category === "Sky Sports") { %>
                         <%- include("event-card", {meetup}); %>
                     <% }; %>
                 <% }); %>
