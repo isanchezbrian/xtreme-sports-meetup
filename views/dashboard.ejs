@@ -1,10 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dashboard.css">
     <script defer src="/app.js"></script>
     <link rel="stylesheet" href="/styles.css">
+    <title>Extreme Sports Meetup Dashboard</title>
 </head>
+<body>
 
+  <div class="logo">
+    <h1>Xtreme Logo</h1>
+     <ul style="list-style-type: none;">
+        <li>Events</li>
+        <li>Members</li>
+        <li>Reminders</li>
+     </ul>    
+  </div>
 
-<form action="/dashboard" method="POST">
+  <div class="primary">
+    <div class="dashboard">
+      <h1>Dashboard</h1>
+      <input type="text">
+    </div>  
+    <div class="create">
+      <form action="/dashboard" method="POST">
     <div class="form-group">
       <label for="name">Event Name</label>
       <input class="form-control" type="text" id="name" name="name" required/>
@@ -42,13 +63,21 @@
       <textarea class="form-control" type="text" id="image_url" name="image_url" required></textarea>
     </div>
     <button class="btn btn-primary submit-btn" type="submit">Add Task</button>
-  </form>
-
-
-<section id="sky-sports" class="event-container">
+  </form>      
+    </div>  
+    <div class="upcoming">
+      <h1>Upcoming Events</h1>
+    </div>  
+  </div>  
+  
+  <section id="sky-sports" class="event-container">
   <% meetups.forEach(meetup => { %>
       <% if(meetup.category) { %>
           <%- include("event-card", {meetup}); %>
       <% }; %>
   <% }); %>
 </section>
+        
+</body>
+</html>
+
