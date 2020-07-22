@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const MONGODB_MJ = ('mongodb://localhost:27017/extreme-sports-meetup');
+const MONGODB_MJ = ('mongodb://localhost:27017/extreme-sports-meetup-test');
 
 mongoose.connect(process.env.MONGODB_MJ || MONGODB_MJ, {
   useNewUrlParser: true,
