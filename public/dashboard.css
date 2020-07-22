@@ -23,7 +23,7 @@ body {
 .dashboard {
   position: relative;
   width: 670px;
-  height: 100px;
+  height: 85px;
   overflow: hidden;
   background-color: white;
   border-radius: 10px;
@@ -32,10 +32,16 @@ body {
 .dashboard h1 {
   padding: 0;
   background-color: white;
+  margin-left: 10px;
 }
 
 .dashboard input {
   position: absolute;
-  right: 0px;
-  top: 20px;
+  right: 15px;
+  top: 25px;
+  background-color: white;
+}
+
+.create h2 {
+
 }
