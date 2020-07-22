@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     db.Event.find({}, (err, allMeetups) => {
       if (err) return console.log(err);
-      else if(allMeetups.length === 0) createSampleData();
+      else if(allMeetups.length === 0) createSampleData(res);
       else {
           console.log(allMeetups);
           res.render("landing-page",{meetups: allMeetups});  
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
-function createSampleData(){
+function createSampleData(res){
     sampleData = [
         {
             name: "Patrick's Snow Boarding",

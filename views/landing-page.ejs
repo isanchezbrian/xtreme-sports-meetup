@@ -50,11 +50,15 @@
                 <img src="/images/sky-image4.jpg" alt="Bungie Jumping">
             </div>
         </section>
-        
 
 
-
-
+        <section id="sky-sports" class="event-container">
+            <% meetups.forEach(meetup => { %>
+                <% if(meetup.category) { %>
+                    <%- include("event-card", {meetup}); %>
+                <% }; %>
+            <% }); %>
+        </section>
 
 
         <footer>
@@ -63,11 +67,6 @@
 
     </main>
 
+
 </body>
 </html>
-<h1>landing page</h1>
-<% meetups.forEach(meetup => { %>
-    <h1>Name: <%= meetup.name                %></h1><br>
-    <h2>Difficulty: <%= meetup.difficulty    %></h2><br>
-    <h3>Organizer: <%= meetup.date %></h3><br><br><br>
-<% }); %>
