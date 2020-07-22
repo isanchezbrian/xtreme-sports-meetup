@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/dashboard.css">
     <script defer src="/app.js"></script>
-    <link rel="stylesheet" href="/styles.css">
     <title>Extreme Sports Meetup Dashboard</title>
 </head>
 <body>
@@ -23,61 +23,93 @@
     <div class="dashboard">
       <h1>Dashboard</h1>
       <input type="text">
-    </div>  
+    </div> 
+    
+    
     <div class="create">
+      <h2>Create New Event</h2>
       <form action="/dashboard" method="POST">
-    <div class="form-group">
-      <label for="name">Event Name</label>
-      <input class="form-control" type="text" id="name" name="name" required/>
-    </div>
-    <div class="form-group">
-      <label for="date">Date of Event</label>
-      <input class="form-control" type="text" id="date" name="date" required/>
-    </div>
-    <div class="form-group">
-      <label for="begin_time">Start Time</label>
-      <input class="form-control" type="text" id="begin_time" name="begin_time" required/>
-    </div>
-    <div class="form-group">
-      <label for="end_time">End Time</label>
-      <input class="form-control" type="text" id="end_time" name="end_time" required/>
-    </div>
-    <div class="form-group">
-      <label for="category">Category</label>
-      <input class="form-control" type="text" id="category" name="category" required/>
-    </div>
-    <div class="form-group">
-      <label for="difficulty">Difficulty Level</label>
-      <input class="form-control" type="text" id="difficulty" name="difficulty" required/>
-    </div>
-    <div class="form-group">
-      <label for="location">Location</label>
-      <input class="form-control" type="text" id="location" name="location" required/>
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      <textarea class="form-control" type="text" id="description" name="description" required></textarea>
-    </div>
-    <div class="form-group">
-      <label for="image_url">Add Image</label>
-      <textarea class="form-control" type="text" id="image_url" name="image_url" required></textarea>
-    </div>
-    <button class="btn btn-primary submit-btn" type="submit">Add Task</button>
-  </form>      
-    </div>  
+        <div class="form-group">
+          <label for="name">Event Name</label>
+          <input class="form-control" type="text" id="name" name="name" required/>
+        </div>
+        <div class="form-group">
+          <label for="date">Date of Event</label>
+          <input class="form-control" type="text" id="date" name="date" required/>
+        </div>
+        <div class="form-group">
+          <label for="begin_time">Start Time</label>
+          <input class="form-control" type="text" id="begin_time" name="begin_time" required/>
+        </div>
+        <div class="form-group">
+          <label for="end_time">End Time</label>
+          <input class="form-control" type="text" id="end_time" name="end_time" required/>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input class="form-control" type="text" id="category" name="category" required/>
+        </div>
+        <div class="form-group">
+          <label for="difficulty">Difficulty Level</label>
+          <input class="form-control" type="text" id="difficulty" name="difficulty" required/>
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input class="form-control" type="text" id="location" name="location" required/>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" type="text" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="image_url">Add Image</label>
+          <textarea class="form-control" type="text" id="image_url" name="image_url" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Task</button>
+      </form>      
+    </div> 
+    
+    
     <div class="upcoming">
       <h1>Upcoming Events</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Date of Event</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Category</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Location</th>
+            <th scope="col">Image</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% meetups.forEach(meetup => { %>
+            <% if(meetup.category) { %>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><%= meetup.name %></td>
+                    <td><%= meetup.date %></td>
+                    <td><%= meetup.begin_time %></td>
+                    <td><%= meetup.end_time %></td>
+                    <td><%= meetup.category %></td>
+                    <td><%= meetup.difficulty %></td>
+                    <td><%= meetup.location %></td>  
+                    <td><img src="<%= meetup.image_url %>" alt="pic"></td>
+                    <td><%= meetup.description %></td>
+                </tr>
+            <% }; %>
+        <% }); %>
+        </tbody>
+      </table>
     </div>  
+
   </div>  
   
-  <section id="sky-sports" class="event-container">
-  <% meetups.forEach(meetup => { %>
-      <% if(meetup.category) { %>
-          <%- include("event-card", {meetup}); %>
-      <% }; %>
-  <% }); %>
-</section>
-        
 </body>
 </html>
 
